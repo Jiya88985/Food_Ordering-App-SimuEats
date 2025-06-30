@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="foodorderapp.FoodMenuController"
+            prefWidth="500" prefHeight="500"
+            style="-fx-background-color: lavender;"
+            stylesheets="@style.css">
+    <children>
+        <ComboBox fx:id="foodComboBox" layoutX="100.0" layoutY="50.0" prefWidth="180"
+                  styleClass="combo-box" promptText="Select Food Item"/>
+        <Spinner fx:id="quantitySpinner" layoutX="300.0" layoutY="50.0" prefWidth="100"
+                 styleClass="spinner"/>
+
+        <Button layoutX="100.0" layoutY="110.0" text="Add Item" onAction="#addItem"
+                styleClass="button main-btn"/>
+        <Button layoutX="220.0" layoutY="110.0" text="Remove Item" onAction="#removeItem"
+                styleClass="button danger-btn"/>
+        <Button layoutX="350.0" layoutY="110.0" text="Back to Main Menu" onAction="#goToMainMenu"
+                styleClass="button secondary-btn"/>
+
+        <TableView fx:id="orderTable" layoutX="50.0" layoutY="170.0" prefHeight="200.0" prefWidth="400.0"
+                   styleClass="table-view">
+            <columns>
+                <TableColumn fx:id="itemNameColumn" text="Item" prefWidth="150"/>
+                <TableColumn fx:id="quantityColumn" text="Quantity" prefWidth="100"/>
+                <TableColumn fx:id="totalColumn" text="Total" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+        <Text fx:id="totalText" layoutX="100.0" layoutY="390.0"
+              styleClass="total-label"/>
+        <Button fx:id="placeOrderButton" layoutX="200.0" layoutY="430.0" text="Place Order" onAction="#placeOrder"
+                styleClass="button main-btn"/>
+    </children>
+</AnchorPane>

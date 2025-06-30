@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="foodorderapp.OrderMenuController"
+            prefWidth="500" prefHeight="450"
+            style="-fx-background-color: lavender;"
+            stylesheets="@style.css">
+
+    <Label text="Name:" layoutX="50" layoutY="50" styleClass="label"/>
+    <TextField fx:id="nameField" promptText="Enter your name" layoutX="150" layoutY="45" prefWidth="250" styleClass="text-field"/>
+
+    <Label text="Phone:" layoutX="50" layoutY="110" styleClass="label"/>
+    <TextField fx:id="phoneField" promptText="Enter your phone number" layoutX="150" layoutY="105" prefWidth="250" styleClass="text-field"/>
+
+    <Label text="Address:" layoutX="50" layoutY="170" styleClass="label"/>
+    <TextField fx:id="addressField" promptText="Enter your address" layoutX="150" layoutY="165" prefWidth="250" styleClass="text-field"/>
+
+    <Button text="Back to Main Menu" onAction="#goToMainMenu" layoutX="290" layoutY="230" prefWidth="140" styleClass="button secondary-btn"/>
+
+    <Button fx:id="placeOrderButton" text="Place Order" onAction="#placeOrder" layoutX="150" layoutY="230" prefWidth="120" styleClass="button primary-btn"/>
+
+    <Button text="Show Today's Summary" onAction="#showTodaysSummary"
+            layoutX="150" layoutY="270" prefWidth="280" styleClass="button summary-btn"/>
+
+    <Label fx:id="orderSummaryLabel" layoutX="50" layoutY="320" prefWidth="400" styleClass="label"/>
+
+</AnchorPane>
